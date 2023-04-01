@@ -18,4 +18,4 @@ Test Date: April 1st, 2023
 
 ## Chinese Version
 
-[\u70b9\u6211\u67e5\u770b\u4e2d\u6587\u7248\u672c](./README-zh.md)
+[点我查看中文版本](./README-zh.md)
