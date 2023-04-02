@@ -19,7 +19,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get -y install python3-pip
-          sudo apt install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract rename
+          sudo apt install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract rename aria2
           sudo apt install liblzma-dev brotli lz4
           pip3 install backports.lzma protobuf pycrypto
           pip install protobuf==3.20
@@ -31,7 +31,7 @@ jobs:
           cd ~
           git clone --recurse-submodules https://github.com/tosasitill/Firmware_extractor.git
           cd Firmware_extractor
-          wget -O firmware.zip -q ${{ github.event.inputs.rom_url }}
+          aria2c -s 10 -x 10 -d . -o firmware.zip "${{ github.event.inputs.rom_url }}"
           ./extractor.sh firmware.zip
           cd ${{ github.workspace }}
           touch info.md
