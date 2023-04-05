@@ -1,6 +1,8 @@
 name: 提取 boot.img / init_boot.img
 
 on:
+  repository_dispatch:
+    types: [rom]
   workflow_dispatch:
     inputs:
       rom_url:
