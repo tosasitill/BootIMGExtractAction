@@ -1,8 +1,6 @@
 name: 提取 boot.img / init_boot.img
 
 on:
-  repository_dispatch:
-    types: [rom]
   workflow_dispatch:
     inputs:
       rom_url:
@@ -21,9 +19,8 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get -y install python3-pip
-          sudo apt install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract rename aria2
-          sudo apt install liblzma-dev brotli lz4
-          pip3 install backports.lzma protobuf pycrypto
+          sudo apt install aria2 liblzma-dev brotli lz4
+          pip3 install backports.lzma pycrypto
           pip install protobuf==3.20
           BUILD_TIME=$(TZ=Asia/Shanghai date +"%m%d%H%M")
           echo "BUILD_TIME=$BUILD_TIME" >> $GITHUB_ENV
