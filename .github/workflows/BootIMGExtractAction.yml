@@ -1,6 +1,8 @@
 name: 提取 boot.img / init_boot.img
 
 on:
+  repository_dispatch:
+    types: [rom]
   workflow_dispatch:
     inputs:
       rom_url:
@@ -44,6 +46,6 @@ jobs:
         with:
             artifacts: "~/Firmware_extractor/out/*"
             bodyfile: "${{ github.workspace }}/info.md"
-            tag: "OUTPUT_${{ env.BUILD_TIME }}"
+            tag: "OUTPUT_${{ env.BUILD_TIME }}_${{ github.run_id }}"
             token: ${{ secrets.GITHUB_TOKEN }}
 
