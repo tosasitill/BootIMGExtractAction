@@ -16,7 +16,7 @@ This repo depends on [Firmware_extractor](https://github.com/ShivamKumarJha/Firm
 
 Test Date: April 11th, 2023
 
-# BootIMGExtractAction
+# 中文版本
 
 这是一个用来提取 ROM 内 boot.img / init_boot.img 的 Github Action 项目
 
