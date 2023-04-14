@@ -38,7 +38,7 @@ jobs:
           echo "ROM 下载直链：${{ github.event.inputs.rom_url }}" >> info.md
           cd ~/Firmware_extractor/out
           if [ -f "init_boot.img" ]; then rm boot.img; fi
-          du -h --total *.img | sed 's/^/提取镜像大小： /' > ${{ github.workspace }}/info.md
+          du -h --total *.img | sed 's/^/提取镜像大小： /' | head -n 1 >> ${{ github.workspace }}/info.md
 
       - name: 上传镜像
         uses: ncipollo/release-action@v1.12.0
