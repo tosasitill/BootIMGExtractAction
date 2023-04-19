@@ -1,4 +1,4 @@
-# BootIMGExtractAction
+![image](./info.png)
 
 This action extract boot.img / init_boot.img and upload them to the Releases
 
