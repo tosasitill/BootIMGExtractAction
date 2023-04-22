@@ -10,11 +10,11 @@ Fork this action and fill in the link to complete the process. Don't forget to c
 
 ## Others
 
-Special thanks to [ShivamKumarJha](https://github.com/ShivamKumarJha)
+Special thanks to [ShivamKumarJha](https://github.com/ShivamKumarJha)、[Suhun Han](https://github.com/ssut)
 
-This repo depends on [Firmware_extractor](https://github.com/ShivamKumarJha/Firmware_extractora)
+This repo depends on [Firmware_extractor](https://github.com/ShivamKumarJha/Firmware_extractora)、[payload-dumper-go](https://github.com/ssut/payload-dumper-go)
 
-Test Date: April 11th, 2023
+Test Date: April 23rd, 2023
 
 
 # 中文版本
@@ -31,8 +31,8 @@ Fork 本仓库，在 Action 界面内选择 “提取 boot.img / init_boot.img�
 
 ## 其他
 
-特别感谢 [ShivamKumarJha](https://github.com/ShivamKumarJha)
+特别感谢 [ShivamKumarJha](https://github.com/ShivamKumarJha)、[Suhun Han](https://github.com/ssut)
 
-本项目依赖于 [Firmware_extractor](https://github.com/ShivamKumarJha/Firmware_extractora)
+本项目依赖于 [Firmware_extractor](https://github.com/ShivamKumarJha/Firmware_extractora)、[payload-dumper-go](https://github.com/ssut/payload-dumper-go)
 
-最后测试通过时间: 2023年4月11日
+最后测试通过时间: 2023年4月23日
