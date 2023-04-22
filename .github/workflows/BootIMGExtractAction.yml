@@ -27,7 +27,7 @@ jobs:
 
       - name: 提取镜像
         run: |
-          aria2c -s 10 -x 10 -d . -o firmware.zip "${{ github.event.inputs.rom_url }}"
+          aria2c -s 10 -x 10 -d . -o ./tmp/firmware.zip "${{ github.event.inputs.rom_url }}"
           ./payload-dumper-go -p boot -o output ./tmp/firmware.zip
           cd ${{ github.workspace }}
           touch info.md
