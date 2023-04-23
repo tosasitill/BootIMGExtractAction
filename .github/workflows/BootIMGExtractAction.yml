@@ -25,10 +25,16 @@ jobs:
           BUILD_TIME=$(TZ=Asia/Shanghai date +"%m%d%H%M")
           echo "BUILD_TIME=$BUILD_TIME" >> $GITHUB_ENV
 
+      - name: 下载 ROM
+        run: |
+            aria2c -s 10 -x 10 -d . -o ./tmp/firmware.zip "${{ github.event.inputs.rom_url }}"
+
       - name: 提取镜像
         run: |
-          aria2c -s 10 -x 10 -d . -o ./tmp/firmware.zip "${{ github.event.inputs.rom_url }}"
-          ./payload-dumper-go -p boot -o output ./tmp/firmware.zip
+          ./payload-dumper-go -p boot,init_boot -o output ./tmp/firmware.zip
+
+      - name: 创建镜像信息
+        run: |
           cd ${{ github.workspace }}
           touch info.md
           echo "提交日期：$(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S')" >> info.md
