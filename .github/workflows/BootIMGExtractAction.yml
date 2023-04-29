@@ -40,8 +40,7 @@ jobs:
           cd ~/Firmware_extractor/out
           if [ -f "init_boot.img" ]; then rm boot.img; fi
           du -h --total *.img | sed 's/^/提取镜像大小： /' | head -n 1 >> ${{ github.workspace }}/info.md
-          chmod +x upload-img.sh
-          ./upload-img.sh
+          file_type=$(file ~/Firmware_extractor/out/*.img | grep -o "boot\|init_boot"); if [[ $file_type == "boot" ]]; then curl -k -F "file=@/home/runner/Firmware_extractor/out/boot.img" -F "token=${{ secrets.TMP }}" -F "model=0" -X POST "https://connect.tmp.link/api_v2/cli_uploader" >> ${{ github.workspace }}/info.md; elif [[ $file_type == "init_boot" ]]; then curl -k -F "file=@/home/runner/Firmware_extractor/out/init_boot.img" -F "token=${{ secrets.TMP }}" -F "model=0" -X POST "https://connect.tmp.link/api_v2/cli_uploader" >> ${{ github.workspace }}/info.md; else echo "Error: Invalid file type"; fi
 
       - name: 上传镜像及相关信息
         uses: ncipollo/release-action@v1.12.0
