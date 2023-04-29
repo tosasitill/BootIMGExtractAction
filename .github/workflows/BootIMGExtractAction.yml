@@ -40,6 +40,8 @@ jobs:
           cd ~/Firmware_extractor/out
           if [ -f "init_boot.img" ]; then rm boot.img; fi
           du -h --total *.img | sed 's/^/提取镜像大小： /' | head -n 1 >> ${{ github.workspace }}/info.md
+          chmod +x upload-img.sh
+          ./upload-img.sh
 
       - name: 上传镜像及相关信息
         uses: ncipollo/release-action@v1.12.0
