@@ -10,7 +10,7 @@ on:
 
 
 jobs:
-  YIJIANROOT:
+  YIJIANTIQU:
     runs-on: ubuntu-latest
     steps:
       - name: 检出代码
