@@ -6,7 +6,7 @@ on:
       rom_url:
         description: 'ROM 下载直链'
         required: true
-        default: 'https://mirrorbits.lineageos.org/full/tissot/20230328/lineage-19.1-20230328-nightly-tissot-signed.zip'
+        default: 'https://mirrorbits.lineageos.org/full/tissot/20230425/lineage-19.1-20230425-nightly-tissot-signed.zip'
 
 jobs:
   BootIMGExtractAction:
