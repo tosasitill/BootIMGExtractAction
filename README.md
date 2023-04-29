@@ -4,9 +4,10 @@ This action extract boot.img / init_boot.img and upload them to the Releases
 
 ## Usage
 
-Fork this action and fill in the link to complete the process. Don't forget to change your github action 'Workflow permissions' to 'Read and write permissions'.
+Fork this action and fill in the link to complete the process. Don't forget to change your github action 'Workflow permissions' to 'Read and write permissions' and
 
 **Supported ROM types only 'Recovery flashable ROM'**
+**Please go to the personal repository's settings, then add a secret in Actions named 'tmp_token' with a value of 'TMP', and save it**
 
 ## Others
 
@@ -28,6 +29,9 @@ Fork 本仓库，在 Action 界面内选择 “提取 boot.img / init_boot.img�
 **如果遇到 “403 资源访问受限”，请去 Settings-Actions-General-Workflow permissions,将它调整至 “Read and write permissions”**
 
 **本项目仅支持卡刷包/Recovery ROM**
+
+**请去个人仓库内设置-Secret-Action-Add 以 tmp_token 为 value 'TMP'为名称 填入保存**
+
 
 ## 其他
 
