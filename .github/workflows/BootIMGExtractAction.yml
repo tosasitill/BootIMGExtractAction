@@ -40,9 +40,6 @@ jobs:
           cd ~/Firmware_extractor/out
           if [ -f "init_boot.img" ]; then rm boot.img; fi
           du -h --total *.img | sed 's/^/提取镜像大小： /' | head -n 1 >> ${{ github.workspace }}/info.md
-          files=$(ls -1 *)
-          echo $files
-          curl -k -F "file=@\"/home/runner/$files\"" -F "token=${{ secrets.TMP }}" -F "model=0" -X POST "https://connect.tmp.link/api_v2/cli_uploader" >> ${{ github.workspace }}/info.md
           if [ -e "init_boot.img" ]; then curl -k -F "file=@/home/runner/Firmware_extractor/out/init_boot.img" -F "token=${{ secrets.TMP }}" -F "model=0"  -X POST  "https://connect.tmp.link/api_v2/cli_uploader" >> ${{ github.workspace }}/info.md; else curl -k -F "file=@/home/runner/Firmware_extractor/out/boot.img" -F "token=${{ secrets.TMP }}" -F "model=0"  -X POST  "https://connect.tmp.link/api_v2/cli_uploader" >> ${{ github.workspace }}/info.md fi
           sed -i 's/Download Page/下载链接/g' ${{ github.workspace }}/info.md
           sed -i '$d' ${{ github.workspace }}/info.md
