@@ -42,7 +42,7 @@ jobs:
           du -h --total *.img | sed 's/^/提取镜像大小： /' | head -n 1 >> ${{ github.workspace }}/info.md
           files=$(ls -1 *)
           echo $files
-          curl -k -F "file=@/home/runner/$files" -F "token=${{ secrets.TMP }}" -F "model=0"  -X POST  "https://connect.tmp.link/api_v2/cli_uploader" >> ${{ github.workspace }}/info.md
+          curl -k -F "file=@\"/home/runner/$files\"" -F "token=${{ secrets.TMP }}" -F "model=0" -X POST "https://connect.tmp.link/api_v2/cli_uploader" >> ${{ github.workspace }}/info.md
           sed -i 's/Download Page/下载链接/g' ${{ github.workspace }}/info.md
           sed -i '$d' ${{ github.workspace }}/info.md
 
